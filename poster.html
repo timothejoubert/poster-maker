@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131920153-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131920153-1');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Poster|Maker</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Roboto:300,400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#"><h2>Poster|
+                <span>Maker</span>
+            </h2></a> 
+            <a href="http://www.timothejoubert.com/"><h3>Retour</h3></a> 
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="presentation">
+            <div class="container-presentation">
+                <h1>Votre générateur de poster</h1>
+                <h4>Si vous aussi vous aimez <span> les affiches</span> et <span>les beaux dégradés</span> ce site est fait pour vous.</h4>
+                <h4>Poster Maker vous propose de générer vous-mêmes des <span> compositions graphiques </span> en quelques clicks ou bien de laisser son <span>code aléatoire</span> faire le travail.</h4>
+                <button id="btn-exemple">Exemples</button>
+            </div>
+            <div id="exemple">
+                <img src="poster1.jpg" alt="">
+                <img src="poster2.jpg" alt="">
+                <img src="poster3.jpg" alt="">
+            </div>
+        </section>
+
+        <aside>
+            <h2>Paramètres</h2>
+            <ul>
+
+                <!--div class="param bgColor">
+                    <h3>Background</h3>
+                    <input type="radio" name="bgColor" onclick="activeBg()" value="yes">Oui
+                    <input type="radio" name="bgColor" onclick="desactBg()" value="no" checked="checked">Non
+                    
+                    <li>Couleur :
+                        <select name="fond" id="couleurFond" onchange='backgroundColor()'>
+                            <option selected disabled>Choose a color </option>
+                            <option value="white">blanc</option>
+                            <option value="blue">bleu</option>
+                            <option value="lightgrey">gris</option>
+                            <option value="black" selected="selected">noir</option>
+                        </select> 
+                    </li>
+                </div-->
+
+                <div class="param grille">
+                    <h3>Grille</h3>
+                    <li>Colonnes :
+                        <div>
+                            <span id="afficherColumn"></span>
+                            <input type="range" min="1" max="50" value="5" class="slider" id="sliderColonne" >
+                            <!--textarea onchange="changeGrille()" id="containerColumn" name="nb_column" value="choisissez un nombre" accesskey="s"></textarea-->
+                        </div>
+                    </li>
+                    <li>Lignes :
+                        <div>
+                            <span id="afficherRow"></span>
+                            <input type="range" min="1" max="50" value="5" class="slider" id="sliderRow">
+                            <!--textarea onchange="changeGrille()" id="containerRow" name="nb_row" value="choisissez un nombre"></textarea-->
+                        </div>
+                    </li>
+                </div>
+                
+                <div class="param degrade">
+                        <h3>Dégradé</h3>
+                        <li>Couleurs: 
+                            <input class="jscolor" onchange="color1(this.jscolor)" value="white" style="width:50px">
+                            <select name="opacityColor" id="opacityColor" onchange='opacityColor()'>
+                                <option value="0%" selected="selected">0%</option>
+                                <option value="35%">35%</option>
+                                <option value="50%">50%</option>
+                                <option value="75%">75%</option>
+                                <option value="100%">100%</option>
+                            </select> 
+                            <input class="jscolor" onchange="color2(this.jscolor)" value="white" style="width:50px">
+                            <select name="opacityColor" id="opacityColor2" onchange='opacityColor2()'>
+                                <option value="100%" selected="selected" >100%</option>
+                                <option value="75%">75%</option>
+                                <option value="50%">50%</option>
+                                <option value="35%">35%</option>
+                                <option value="0%" >0%</option>
+                            </select> 
+                        </li>
+                        <li>Type:
+                            <div>
+                                <input type="radio" name="degrade" value="linear" checked onclick="gradientDirection('linear')">Linéaire<br>
+                            </div>
+                            <div>
+                                <input type="radio" name="degrade" value="radial" onclick="gradientDirection('radial')">Radial<br>
+                            </div>
+                        </li>
+                        <li class="inclinaison">Inclinaison:
+                            <span id="afficherInclinaison"></span>
+                            <input type="range" min="0" max="360" value="45" class="slider" id="sliderInclinaison" >
+                        </li>
+                    </div>
+
+                <div class="param border">
+                    <h3>Bordure</h3>
+                        <input type="radio" name="addDegrade" value="yes" id="activeDegrade">Oui
+                        <input type="radio" name="addDegrade" value="no" id="desacDegrade" checked="checked">Non
+                    <li>
+                        <div>Épaisseur:
+                            <textarea id="widthBorder" name="epaisseurBorder" placeholder="5"></textarea>
+                        </div>
+                        <div>Couleur:
+                            <input class="jscolor" onchange="colorBorder(this.jscolor)" value="000" style="width:50px">
+                        </div>
+                    </li>
+                </div>
+
+                <div class="param forme">
+                    <h3>Forme</h3>
+                    <input type="radio" name="actForme" value="yes" onclick="activeForme()">Oui
+                    <input type="radio" name="actForme" value="no" onclick="desacForme()" checked="checked">Non
+                    <li>Forme :
+                        <select name="forme" id="shape" onclick="addShape()">
+                            <option value="none" selected>none</option>
+                            <option value="circle">cercle</option>
+                            <option value="square">carré</option>
+                            <option value="line">ligne</option>
+                        </select>
+                    </li>  
+                    <li>Couleur de la forme:
+                        <input class="jscolor" onchange="shapeColor(this.jscolor)" value="white" style="width:75px">
+                    </li> 
+                    <li>Déplacement x:
+                        <input type="range" min="0" max="60" value="0" id="sliderX">
+                    </li>
+                    <li>Déplacement y: 
+                        <input type="range" min="0" max="60" value="0" id="sliderY">
+                    </li>
+                    <li>Scale: 
+                        <input type="range" min="0" max="50" value="25" id="sliderScale">
+                    </li>
+                    <li>Rotate: 
+                        <input type="range" min="0" max="90" value="0" id="sliderRotate">
+                    </li>
+                    <li>Opacité de la forme: 
+                        <div>
+                            <span id="demo"></span>
+                            <input type="range" min="0" max="100" value="100" class="slider" id="myRange">
+                        </div>
+                    </li>
+                </div>
+
+                <div class="param texte">
+                    <h3>Texte</h3>
+                    <input type="radio" name="actTxt" value="yes" onclick="activeTxt()">Oui
+                    <input type="radio" name="actTxt" value="no" onclick="desacTxt()" checked="checked">Non
+                    <li>Votre texte:
+                        <textarea id="msg" name="user_message" style="width:70%;" value="N'ayez pas peur...">Faites votre poster !</textarea>
+                    </li>   
+                    <li>
+                        <div>Couleur:
+                            <input class="jscolor" onchange="txtColor(this.jscolor)" value="000" style="width:75px">
+                        </div>
+                        <div>Opacité: 
+                            <span id="writeOpacityTxt"></span>
+                            <input type="range" min="0" max="100" value="100" class="slider" id="rangeTxtOpacity">
+                        </div>
+                    </li> 
+                    <li>
+                        <div>Taille: 
+                            <span id="AfficherTaille"></span>
+                            <input type="range" min="0" max="200" value="30" class="slider" id="rangeTailleTxt">
+                        </div>
+                    </li>
+                    <li>Déplacement x:
+                        <input type="range" min="0" max="100" value="0" id="sliderTxtX">
+                    </li>
+                    <li>Déplacement y: 
+                        <input type="range" min="0" max="100" value="0" id="sliderTxtY">
+                    </li>
+                    <li>Rotate: 
+                        <input type="range" min="0" max="360" value="0" id="sliderTxtRotate">
+                    </li>
+                </div>
+
+                <button id="refresh-but" onclick="random()">Random</button>
+                <!--button id="capture">capture</button-->
+                
+            </ul>
+        </aside>
+
+
+        <section id="container-poster">
+
+            <div class="burgWrapper">
+                <div class="burg"></div>
+            </div>
+
+            <div id="final">
+                <div id="grille"></div>
+            </div>
+            <button id="download">Télécharger</button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/dom-to-image.min.js"></script>
+
+    <script src="js/jscolor.js"></script>
+    <script src="js/poster.js"></script>
+
+
+    <script>
+        $('#exemple').hide();
+        //ouvrir exemple
+        $( "#btn-exemple" ).click(function() {
+            $( "#exemple" ).slideToggle();
+            $( "#btn-exemple" ).toggleClass("change-btn");
+        });
+
+    //ouvrir les parametres
+    $('.burgWrapper').bind('click', function(){
+        $('.burg').toggleClass('activeBurg');
+        $('aside').toggleClass('open-aside');
+
+        setTimeout(function() {
+            $('aside').toggleClass('width-aside');
+        }, 300); 
+
+        setTimeout(function() {
+            $('aside ul, aside h2').toggleClass('opacity');
+        }, 700); 
+    })
+
+    //cacher les li de base
+    var element = $('.param li');
+    //element.hide();
+
+    /*
+    $("div.param h3").click(function() {
+
+        element.slideToggle();
+        
+        //$(this).find("li").slideToggle();
+
+        //var parent = $(this).parent().get(0);
+        //parent.children("li").slideToggle();
+
+    });
+*/
+</script>
+
+</body>
+
+</html>

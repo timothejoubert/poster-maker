@@ -1,0 +1,429 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+cursor{
+    display: none;
+}
+li{
+    list-style: none;
+    margin: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+h1{
+    font-size: 3.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+h2{
+    font-weight: 800;
+}
+article h2{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+h3{
+    font-family: 'Fira Mono', monospace;
+    transition: all 300ms ease-in;
+}
+h4{
+    font-weight: 400;
+    font-size: 1.3em;
+}
+cursor{
+    display: none;
+}
+span{
+    font-weight: 700;
+}
+button{
+    display: block;
+
+    background-color: blue;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    font-family: 'Fira Mono', monospace; 
+    text-transform: uppercase; 
+
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(19, 2, 167);
+}
+input, textarea, select{
+    margin: 0 5px;
+}
+
+/*
+    typo
+*/
+@font-face {
+    font-family: "Avara";
+    src: url("../Avara-Bold.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Bluu";
+    src: url("../BluuNext-Bold.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Gosha";
+    src: url("../GoshaSans-Regular.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Gosha bold";
+    src: url("../GoshaSans-Bold.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Monument";
+    src: url("../MonumentExtended-Regular.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Monument bold";
+    src: url("../MonumentExtended-Ultrabold.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Ouroboros";
+    src: url("../Ouroboros.otf") format("OpenType"),
+}
+@font-face {
+    font-family: "Pt-sans";
+    src: url("../PT_Sans-Web-BoldItalic.ttf") format("truetype"),
+}
+@font-face {
+    font-family: "Trickster";
+    src: url("../Trickster-Reg.ttf") format("truetype"),
+}
+@font-face {
+    font-family: "Casa";
+    src: url("../Casa-Regular.otf") format("OpenType"),
+}
+/**/
+/*          acceuil          */
+/**/
+
+/*      header      */
+header{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    border-bottom: solid 1px black;
+    background-color: white;
+    z-index: 10;
+}
+header h3:hover {
+    color: blue;
+}
+nav{
+    width: 90%;
+    margin: auto auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/**/
+/*          poster maker one page           */
+/**/
+
+
+/*
+    nav 
+*/
+
+.burgWrapper {
+    position: absolute;
+    z-index: 5;
+    padding-top: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 10px;
+    top: 10px;
+}
+.burgWrapper:hover .burg, .burgWrapper:hover .burg:after, .burgWrapper:hover .burg:before{
+    background-color: #333;
+}
+.burg {
+  display: block;
+  height: 5px;
+  width: 30px;
+  background: black;
+  position: relative;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: all 0.2s;
+}
+.burgWrapper:hover .burg:after{
+    top: 0;
+    transform: rotate(45deg);
+}
+.burgWrapper:hover .burg:before{
+    top: 0;
+    transform: rotate(-45deg);
+}
+.burgWrapper:hover .burg{
+    transform: scale(1.2);
+    background-color: transparent;
+}
+.burg:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 30px;
+  height: 5px;
+  background: #000;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: all 0.2s;
+}
+.burg:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 30px;
+  height: 5px;
+  background: #000;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: all 0.2s;
+}
+
+.activeBurg {
+  background: transparent;
+}
+.activeBurg:before {
+  -webkit-transform: rotate(45deg);
+  top: 0;
+}
+.activeBurg:after {
+  -webkit-transform: rotate(-45deg);
+  top: 0;
+}
+/*
+    fin nav
+*/
+
+
+main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+section{
+    position: relative;
+
+}
+#presentation{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.container-presentation{
+    width: 70%;
+    margin: 10vh auto 0 auto;
+}
+.container-presentation h1{
+    width: 40%;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+.container-presentation h4{
+    width: 70%;
+    margin-bottom: 10px;
+}
+#container-poster{
+    flex-grow: 1;
+    padding: 70px;
+    min-height: 100vh;
+}
+#exemple{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 200px;
+    height: 50vh;
+    left: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#exemple img{
+    width: 100%;
+}
+.change-btn{
+    background-color: rgb(15, 15, 92);
+}
+aside{
+    position: relative;
+    display: none; /**/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 0%; /**/
+    border-right: 1px solid black;
+    transition: all 500ms ease-out;
+}
+aside h2, aside ul{
+    opacity: 0; /**/
+    transition: all 300ms linear;
+}
+aside h3{
+    display: inline-block;
+}
+aside h3:hover{
+    cursor: pointer;
+    color: blue;
+}
+.opacity{
+    opacity: 1;
+}
+aside h2{
+    font-size: 2em;
+    margin: 20px 0;
+}
+.open-aside{
+    display: flex;
+}
+.width-aside{
+    width: 40%;
+}
+aside ul{/*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+    padding: 30px 20px;
+    height: 80vh;
+    width: 90%;
+    overflow-y: scroll;
+}
+textarea, #button-txt{
+    width: 75px;
+    height: 1.5em;
+}
+.param{
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+}
+
+
+#final{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+#grille{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;/*
+    grid-template-columns: auto;
+    transition: all 300ms ease-out;*/
+}
+
+#grille div{
+    /*border: 50px solid rgba(0, 0, 0, 0.3);*/
+    background: linear-gradient(45deg, blue 0%, blueviolet 50%);
+}
+
+#refresh-but{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#download{
+    float: right;
+    margin-top: 20px;
+}
+/*      la forme choisie        */
+.circle, .square, .line{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
+.circle{
+    border-radius: 50%;
+}
+.line{
+    width: 5px !important;
+    height: 100% !important;
+    border-radius: 2px !important;
+}
+.userTxt{
+    position: absolute;
+    z-index: 5;
+}
+.userTxt a{
+    text-transform: uppercase;
+    text-decoration: underline;
+    transition: all 300ms ease;
+}
+.userTxt a:hover{
+    color: blue;
+}
+
+
+
+@media (max-width: 600px) {
+    .container-presentation{
+        width: 85%;
+        margin: 5vh auto;
+    }
+    .container-presentation h1{
+        font-size: 2.5em;
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .container-presentation h4{ 
+        width: 90%;
+    }
+    #btn-exemple{
+        position: relative;
+        margin-top: 20px;
+        z-index: 10;
+    }
+    #exemple{
+        width: 100%;
+        top: 50%;
+        left: 0px;
+        height: 90vh;
+        z-index: 5;
+    }
+    #exemple img{
+        width: 40%;
+    }
+    aside{
+        height: 50vh;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        padding-bottom: 30px;
+    }
+    .width-aside{
+        width: 100vw;
+    }
+}
