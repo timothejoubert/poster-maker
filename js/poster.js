@@ -437,11 +437,8 @@
     //////////////////////////////
 
     var randomTxt = [
-        'Ça va toi?',
-        'Toz',
-        'Toooooooooooz',
-        'Va voir <a href="https://www.instagram.com/thim_ox/" target="_blank"> mon insta </a>',
-        'Trop bien ce site, hein ?',
+        'Va voir <a href="https://www.instagram.com/thim_ox/" target="_blank">ça</a>',
+        'Beau dégradé ça, GG !',
         '',
         '',
         '',
@@ -449,14 +446,13 @@
         '',
         '',
         '',
-        '',
-        '',
+        'Tu peux faire mieux',
         'Essaie encore',
         'Create your own poster',
         'Pas mal celui la',
         'Encore',
         'On peut y passer la journée...',
-        'skurt'
+        'Again',
     ];
 
     //genere une couleur aléatoire
@@ -599,12 +595,13 @@ var poster = document.getElementById('final');
 var options = {
     quality: 0.95 
 };
-
+var nbDownload = 0;
 btn.onclick = function() {
 domtoimage.toJpeg(poster, options).then(function (dataUrl) {
+    nbDownload++;
     console.log("download");
     var link = document.createElement('a');
-    link.download = 'mon-poster.jpg';
+    link.download = 'mon-poster-' + nbDownload + '.jpg';
     link.href = dataUrl;
     link.click();
 });
